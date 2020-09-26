@@ -1,0 +1,117 @@
+:root {
+  --primary-color: #fd951f;
+  --bg-color: #130f0d;
+  --text-color: #f0f0f5;
+  --light-color: rgba(255, 255, 255, 0.04);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.form__sign-up {
+  background: rgba(255, 255, 255, 0.03);
+
+  width: 100%;
+  max-width: 500px;
+
+  margin: 32px auto;
+  padding: 32px 64px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form__sign-up h2 {
+  margin-bottom: 2rem;
+}
+
+.form__sign-up .form__field {
+  border: none;
+  margin-bottom: 4rem;
+}
+
+.form__sign-up .form__field legend {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+
+.input,
+.select {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+input,
+select,
+button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  width: 100%;
+
+  padding: 16px 0;
+
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+
+  background-color: transparent;
+
+  outline: none;
+
+  color: var(--text-color);
+  font-size: 1em;
+}
+
+button {
+  margin-top: 16px;
+  background-color: var(--primary-color);
+}
+
+.input input ~ .text__label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+
+  transition: .4s;
+}
+
+
+.input input:focus ~ .text__label,
+.input input:valid ~ .text__label {
+  transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+.input .error {
+  display: flex;
+  border: 1px solid red;
+  padding: 0.4em;
+  background-color: rgba(255, 0, 0, 0.02);
+
+  transform: scaleY(0);
+  transition: .3s;
+}
+
+.error.active {
+  transform: scaleY(1);
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/index.js" defer></script>
+
+    <title>Form</title>
+  </head>
+  <body>
+    <form class="form__sign-up">
+      <h2>Criar conta</h2>
+
+      <fieldset class="form__field">
+        <legend>Dados pessoais</legend>
+
+        <div class="input__block">
+          <div class="input">
+            <input type="text" id="name" name="name" required />
+            <label class="text__label">Nome</label>
+            <span class="error"></span>
+          </div>
+          <div class="input">
+            <input type="text" id="last-name" name="last-name" required />
+            <label class="text__label">Sobrenome</label>
+            <span class="error"></span>
+          </div>
+        </div>
+
+        <div class="input__block">
+          <div class="select">
+            <select name="gender" id="gender">
+              <option label="Sexo" hidden selected></option>
+              <option value="male">Homem</option>
+              <option value="feminine">Mulher</option>
+            </select>
+            <span class="error"></span>
+          </div>
+
+          <div class="input">
+            <label>Data de nascimento:</label>
+            <input type="date" id="birth" name="birth" min="1950-01-01" required>
+            <span class="error"></span>
+          </div>
+        </div>
+
+        <div class="input__block">
+          <div class="input">
+            <input type="text" id="CPF" name="CPF">
+            <label class="text__label">CPF</label>
+            <span class="error"></span>
+          </div>
+          <div class="input">
+            <input type="text" id="phone" name="phone">
+            <label class="text__label">Celular</label>
+            <span class="error"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form__field">
+        <legend>E-mail e senha</legend>
+        <div class="input">
+          <input type="email" id="email" name="email" required />
+          <label class="text__label">E-mail</label>
+          <span class="error"></span>
+        </div>
+        <div class="input">
+          <input type="password" id="password" name="password" required />
+          <label class="text__label">Senha</label>
+          <span class="error"></span>
+        </div>
+        <div class="input">
+          <input type="password" id="confirm-password" name="confirm-password" required />
+          <label class="text__label">Confirmar senha</label>
+          <span class="error"></span>
+        </div>
+      </fieldset>
+
+      <button class="form__submit" type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
