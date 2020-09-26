@@ -38,30 +38,29 @@ body {
   flex-direction: column;
 }
 
-.form__sign-up h2 {
+.form__title {
   margin-bottom: 2rem;
 }
 
-.form__sign-up .form__field {
+.form__field {
   border: none;
   margin-bottom: 4rem;
 }
 
-.form__sign-up .form__field legend {
+.field__legend {
   font-size: 1.4rem;
   margin-bottom: 2rem;
 }
 
-
-.input,
-.select {
+.input__field,
+.select__field {
   position: relative;
   margin-bottom: 24px;
 }
 
-input,
-select,
-button {
+.input,
+.select,
+.form__submit {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -81,12 +80,16 @@ button {
   font-size: 1em;
 }
 
-button {
+.select option {
+  color: var(--bg-color);
+}
+
+.form__submit {
   margin-top: 16px;
   background-color: var(--primary-color);
 }
 
-.input input ~ .text__label {
+.input__field .input ~ .input__label {
   position: absolute;
   top: 16px;
   left: 0;
@@ -95,14 +98,14 @@ button {
 }
 
 
-.input input:focus ~ .text__label,
-.input input:valid ~ .text__label {
+.input__field .input:focus ~ .input__label,
+.input__field .input:valid ~ .input__label {
   transform: translateY(-24px);
   font-size: 0.8em;
   letter-spacing: 0.1em;
 }
 
-.input .error {
+.input__error {
   display: flex;
   border: 1px solid red;
   padding: 0.4em;
@@ -112,6 +115,6 @@ button {
   transition: .3s;
 }
 
-.error.active {
+.input__error.active {
   transform: scaleY(1);
 }
