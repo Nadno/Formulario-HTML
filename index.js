@@ -1,5 +1,7 @@
+import validation from './validation.js';
+
 const form = document.querySelector('form');
-const fields = document.querySelectorAll("[required]");
+const fields = form.querySelectorAll("input");
 
 const validateField = (field) => {
   function verifyErrors() {
@@ -21,6 +23,9 @@ const validateField = (field) => {
       email: {
         valueMissing: "E-mail é obrigatório",
         typeMismatch: "E-mail inválido",
+      },
+      password: {
+        valueMissing: "Preencha este campo"
       }
     };
 
@@ -28,7 +33,7 @@ const validateField = (field) => {
   }
 
   function setCustomMessage(message) {
-    const spanError = field.parentNode.querySelector('span.error');
+    const spanError = field.parentNode.querySelector('.input__error');
     if (message) {
       spanError.classList.add('active');
       spanError.innerHTML = message;
@@ -40,7 +45,7 @@ const validateField = (field) => {
 
   return function() {
     const error = verifyErrors();
-    
+    console.log(error)
     if (error) {
       const message = customMessage(error);
       setCustomMessage(message);
@@ -61,12 +66,22 @@ const customValidation = ({ target }) => {
 };
 
 for ( let field of fields ) {
-  field.addEventListener("invalid", event => {
-    event.preventDefault();
+  // field.addEventListener("invalid", event => {
+  //   event.preventDefault();
 
-    customValidation(event);
+  //   customValidation(event);
+  // });
+  
+  if (!validation[field.id]) {
+    field.addEventListener("blur", ({ target }) => {
+      console.log("***default", field.id, validation["default"](field.value, field.id));
+    });
+    continue;
+  }
+  
+  field.addEventListener("blur", ({ target }) => {
+    console.log(field.id, validation[field.id](field.value, field.id));
   });
-  field.addEventListener("blur", customValidation);
 }
 
 
@@ -77,5 +92,5 @@ for ( let field of fields ) {
 
 form.onsubmit = (event) => {
   event.preventDefault();
-  console.log("envia o form");
+  validation();
 };
