@@ -4,11 +4,11 @@
 </br>
 
 <h1 align="center">Formulário</h1>
-<h1 align="center"><img src="/img/form-1"></h1>
-<h1 align="center"><img src="/img/form-2"></h1>
+<h1 align="center"><img src="/img/form-1.png"></h1>
+<h1 align="center"><img src="/img/form-2.png"></h1>
 </br>
 
 <h1 align="center">Exemplo de erros</h1>
-<h1 align="center"><img src="/img/form-error-1"></h1>
-<h1 align="center"><img src="/img/form-error-2"></h1>
+<h1 align="center"><img src="/img/form-error-1.png"></h1>
+<h1 align="center"><img src="/img/form-error-2.png"></h1>
 </br>
