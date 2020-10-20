@@ -15,6 +15,7 @@ function customMessage(field, error) {
   const messages = {
     default: {
       empty: "Por favor, preencha este campo",
+      invalid: "Valor inválido",
     },
     birth: {
       min: "O ano mínimo permitido é 1950",
