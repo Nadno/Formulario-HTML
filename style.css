@@ -61,7 +61,7 @@ body {
 .select__field,
 .date__field {
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 2.8rem;
   font-size: 1.4rem;
 }
 
@@ -85,10 +85,6 @@ body {
 
   color: var(--text-color);
   font-size: 1em;
-}
-
-.input {
-  margin-bottom: 1rem;
 }
 
 .select option {
